@@ -4,6 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>SJ_Naver</title>
+  <style>
+      a:link{
+          color:#6b2aff;
+          text-decoration:none;
+      }
+      a:visited{
+          color: #0a0a0a;
+      }
+      a:hover, a:focus { animation-duration: 3s; animation-name: rainbowLink; animation-iteration-count: infinite; text-decoration:underline;}
+      @keyframes rainbowLink {
+          0% { color: #ff2a2a; }
+          15% { color: #ff7a2a; }
+          30% { color: #ffc52a; }
+          45% { color: #43ff2a; }
+          60% { color: #2a89ff; }
+          75% { color: #202082; }
+          90% { color: #6b2aff; }
+          100% { color: #e82aff; }
+          }
+      .sj{
+          font-weight:bold;
+          color:blue;
+      }
+      #first{
+          color:dodgerblue;
+      }
+      h1{
+          color:darkslategray;
+      }
+  </style>
 </head>
 <body>
   <h1><img src="naver_logo.png" width="120"> <span style="font-weight:bold"><a href="http://www.naver.com/" target="_blank" title="Naver 검색창 이동">검색창</a> 링크</span></h1>
@@ -11,7 +41,50 @@
   <img alt="Html" src ="https://img.shields.io/badge/-Naver-000000?style=flat&logo=Naver&logoColor=Green"/>
   <img alt="Html" src ="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white"/>
   <img alt="Html" src ="https://img.shields.io/badge/-C++-000000?style=flat&logo=CPlusPlus&logoColor=red"/>
-  <input type="checkbox">
+  <br>
+  <!--
+  <input type="button" value="Light" onclick="
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';
+  ">
+  <input type="button" value="Dark" onclick="
+  document.body.style.backgroundColor='black';  <!body = querySelector('body')>
+  document.querySelector('body').style.color='white';
+  ">
+  -->
+  <input id="light_dark" type="button" value="Dark" onclick="
+  if (document.querySelector('#light_dark').value === 'Light'){
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    document.querySelector('#light_dark').value = 'Dark';
+  }
+  else{
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    document.querySelector('#light_dark').value = 'Light';
+  }
+  ">
+  <input type="button" value="Dark__Refactoring" onclick="
+  let body_var = document.querySelector('body');
+  if (this.value === 'Light__Refactoring'){
+    body_var.style.backgroundColor='white';
+    body_var.style.color='black';
+    this.value = 'Dark__Refactoring';
+    
+    let link_list = document.querySelectorAll('a');
+    for (let i in link_list){ link_list[i].style.color='black'; }
+  }
+  else{
+    body_var.style.backgroundColor='black';
+    body_var.style.color='white';
+    this.value = 'Light__Refactoring';
+
+    let link_list = document.querySelectorAll('a');
+    for (let i in link_list) { link_list[i].style.color='powderblue'; }
+  }
+  ">
+  <br>
+  <li><a href="grammers.html">Compare opertators</a></li>
   <h2>
   <li><a href="test_link.html">Test Page Link</a></li>
   </h2>
@@ -46,6 +119,5 @@
 	  </tr>
 	</table>
     
-  
 </body>
 </html>

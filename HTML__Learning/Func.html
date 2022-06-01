@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <h1>Function</h1>
+        <script>
+            function sum_c(left, right){
+              return '<div style="color:dodgerblue; font-weight:bold";>'+left+right+'</div>';
+            }
+            function sum(left, right){
+              return left + right;
+            }
+            document.write(sum(2,3)+'<br>');
+            document.write('<div style="color:red">'+sum(2,3)+'</div>');
+            document.write('<div style="font-size:3rem">'+sum(2,3)+'</div>');
+            document.write(sum_c(22,33));   // 문자 형태 출력
+        </script>
+    </p>
+</body>
+</html>

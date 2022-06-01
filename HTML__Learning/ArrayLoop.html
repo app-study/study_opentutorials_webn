@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <h1>Array & Loop</h1>
+        <h2>Array</h2>
+        <script>
+            let sj_arr=["SJ","DW"];
+        </script>
+        <script>
+            document.write('<li>array.length</li> document.write : ');
+            document.write(sj_arr.length);
+        </script>
+        <script>
+            document.write('<br><br><li>index 0, 1 of array</li> arr[0] : ');
+            document.write(sj_arr[0] + '<br>');
+            document.write(' arr[1] : ');
+            document.write(sj_arr[1]);
+        </script>
+        <h2>Loop</h2>
+        <script>
+            let arr = ['sj_1','sj_2','sj_3'];
+            document.write('While loop start.</li>');
+            let i = 0;
+            while(i++ < arr.length){
+                document.write('<li>'+arr[i - 1]+'</li>');
+            }
+            document.write('loop end.');
+        </script>
+        <script>
+            document.write('<br><br><li>For loop start.</li>');
+            for (let j in arr){
+                document.write('<li>'+arr[arr.length - j - 1]+'</li>');
+            }
+            document.write('loop end.');
+        </script>
+    </p>
+</body>
+</html>

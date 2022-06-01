@@ -34,6 +34,34 @@
           color:darkslategray;
       }
   </style>
+  <script>      // Function Script
+      let body_v = {
+          set_body_color:function(fcolor, bgcolor){
+              document.body.style.backgroundColor=bgcolor;
+              document.body.style.color=fcolor;
+          }
+      }
+      let link_v = {
+          set_link_color:function(color){
+              let link_list = document.querySelectorAll('a');
+              for (let i in link_list){ link_list[i].style.color = color; }
+          }
+      }
+      function LightDarkHandler(self){
+        let body_var = document.querySelector('body');
+        if (self.value === 'Dark__Refactoring'){
+            self.value = 'Light__Refactoring';          // value를 body,link color 변경 뒤에 바꾸니까 안 바 뀜. 왜???
+            body_v.set_body_color('white', 'black');
+            link_v.set_link_color('yellow');
+        }
+        else{
+            self.value = 'Dark__Refactoring';
+            body_v.set_body_color('black', 'white');
+            link_v.set_link_color('black');
+        }
+      }
+  </script>
+  <script src="button_neon.html"></script>
 </head>
 <body>
   <h1><img src="naver_logo.png" width="120"> <span style="font-weight:bold"><a href="http://www.naver.com/" target="_blank" title="Naver 검색창 이동">검색창</a> 링크</span></h1>
@@ -42,6 +70,13 @@
   <img alt="Html" src ="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white"/>
   <img alt="Html" src ="https://img.shields.io/badge/-C++-000000?style=flat&logo=CPlusPlus&logoColor=red"/>
   <br>
+  <a href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Neon button
+    </a>
   <!--
   <input type="button" value="Light" onclick="
   document.querySelector('body').style.backgroundColor='white';
@@ -64,27 +99,15 @@
     document.querySelector('#light_dark').value = 'Light';
   }
   ">
-  <input type="button" value="Dark__Refactoring" onclick="
-  let body_var = document.querySelector('body');
-  if (this.value === 'Light__Refactoring'){
-    body_var.style.backgroundColor='white';
-    body_var.style.color='black';
-    this.value = 'Dark__Refactoring';
-    
-    let link_list = document.querySelectorAll('a');
-    for (let i in link_list){ link_list[i].style.color='black'; }
-  }
-  else{
-    body_var.style.backgroundColor='black';
-    body_var.style.color='white';
-    this.value = 'Light__Refactoring';
-
-    let link_list = document.querySelectorAll('a');
-    for (let i in link_list) { link_list[i].style.color='powderblue'; }
-  }
+  <input type="button" value="Dark__Refactoring" onclick="      // onclick 속성!!으로 Function을 썼음. 참고.
+    LightDarkHandler(this);
   ">
   <br>
-  <li><a href="grammers.html">Compare opertators</a></li>
+  <input type="button" value="Comparison Operation" onclick="window.open('Comp.html')">
+  <input type="button" value="Conditional Statement" onclick="window.open('Condition.html')">
+  <input type="button" value="Array & Loop" onclick="window.open('ArrayLoop.html')">
+  <input type="button" value="Function" onclick="window.open('Func.html')">
+  <input type="button" value="Object" onclick="window.open('Object.html')">
   <h2>
   <li><a href="test_link.html">Test Page Link</a></li>
   </h2>

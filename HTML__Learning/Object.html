@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        let user_info = {
+            "id":"sj",
+            "name":"Sjlee"
+        };
+        document.write("id : "+user_info.id+"<br>");
+        document.write("name : "+user_info.name+"<br>");
+        user_info.birth = "930531";
+        document.write("birth : "+user_info.birth+"<br>");
+        user_info["PH number"] = "010-2020";
+        document.write("PH : "+user_info["PH number"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for(let keyword in user_info){      // Index 기준으로 iterate. 일반 배열에서는 0, 1, 2, ... 순으로 iterate
+            document.write(keyword+' : '+user_info[keyword]+'<br>');
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        user_info.showAll = function(){
+            for(keyword in this){
+                if (keyword === 'showAll') continue;
+                document.write(keyword+' : '+this[keyword]+'<br>');
+            }
+        }
+        user_info.showAll();
+    </script>
+</body>
+</html>

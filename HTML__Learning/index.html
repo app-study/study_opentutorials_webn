@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>SJ_Naver</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  <!--import jquery-->
   <style>
       a:link{
-          color:#6b2aff;
+          color:black;
           text-decoration:none;
       }
       a:visited{
@@ -37,14 +38,20 @@
   <script>      // Function Script
       let body_v = {
           set_body_color:function(fcolor, bgcolor){
-              document.body.style.backgroundColor=bgcolor;
-              document.body.style.color=fcolor;
+              // document.body.style.backgroundColor=bgcolor;
+              // document.body.style.color=fcolor;
+
+              $('body').css('color', fcolor);
+              $('body').css('backgroundColor', bgcolor);
           }
       }
       let link_v = {
           set_link_color:function(color){
-              let link_list = document.querySelectorAll('a');
-              for (let i in link_list){ link_list[i].style.color = color; }
+          //     let link_list = document.querySelectorAll('a');
+          //     for (let i in link_list){ link_list[i].style.color = color; }
+
+          // $ : Jquery 함수 기호. 이 웹페이지의 모든 'a'태그를 Jquery로 제어하겠다.는 의미
+          $('a').css('color', color);
           }
       }
       function LightDarkHandler(self){
@@ -52,7 +59,7 @@
         if (self.value === 'Dark__Refactoring'){
             self.value = 'Light__Refactoring';          // value를 body,link color 변경 뒤에 바꾸니까 안 바 뀜. 왜???
             body_v.set_body_color('white', 'black');
-            link_v.set_link_color('yellow');
+            link_v.set_link_color('powderblue');
         }
         else{
             self.value = 'Dark__Refactoring';
@@ -77,7 +84,7 @@
     <span></span>
     Neon button
     </a>
-  <!--
+  <!--  // Two button
   <input type="button" value="Light" onclick="
   document.querySelector('body').style.backgroundColor='white';
   document.querySelector('body').style.color='black';
@@ -87,6 +94,7 @@
   document.querySelector('body').style.color='white';
   ">
   -->
+  <!--  // One button - if condition
   <input id="light_dark" type="button" value="Dark" onclick="
   if (document.querySelector('#light_dark').value === 'Light'){
     document.querySelector('body').style.backgroundColor='white';
@@ -99,6 +107,7 @@
     document.querySelector('#light_dark').value = 'Light';
   }
   ">
+  -->
   <input type="button" value="Dark__Refactoring" onclick="      // onclick 속성!!으로 Function을 썼음. 참고.
     LightDarkHandler(this);
   ">
